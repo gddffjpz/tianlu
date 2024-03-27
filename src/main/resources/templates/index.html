@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle}">Default Title</title>
+</head>
+<body>
+<h2>以下是两个文件格式为.md的接口 文档的内容</h2>
+<h2>1.1 产品生产数据</h2>
+<h3>1.1.1 基本信息</h3>
+<p>请求路径：/viduo</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于接受生产数据</p>
+
+<h3>1.1.2 请求参数</h3>
+<p>格式：json</p>
+<p>参数说明：</p>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>生产视频ID</td>
+    </tr>
+</table>
+<p>请求参数样例：</p>
+<pre>
+    {
+        "id": 1
+    }
+    </pre>
+
+<h3>1.1.3 响应数据</h3>
+<p>参数格式：application/json</p>
+<p>参数说明：</p>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>code</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>响应码，1 代表成功，0 代表失败</td>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>id</td>
+    </tr>
+    <tr>
+        <td>url</td>
+        <td>string</td>
+        <td>必须</td>
+        <td>视频所在地址</td>
+    </tr>
+</table>
+<p>响应数据样例：</p>
+<pre>
+    {
+      "code": 1,
+      "msg": "success",
+      "data": [
+        {
+          "id": 33,
+          "url": "232"
+        }
+      ]
+    }
+    </pre>
+
+<h2>1.2 宣传数据</h2>
+<h3>1.2.1 基本信息</h3>
+<p>请求路径：/publicize</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于接受生产数据</p>
+
+<h3>1.2.2 请求参数</h3>
+<p>格式：json</p>
+<p>参数说明：</p>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>生产视频ID</td>
+    </tr>
+</table>
+<p>请求参数样例：</p>
+<pre>
+    {
+        "id": 1
+    }
+    </pre>
+
+<h3>1.2.3 响应数据</h3>
+<p>参数格式：application/json</p>
+<p>参数说明：</p>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>code</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>响应码，1 代表成功，0 代表失败</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>object[]</td>
+        <td>非必须</td>
+        <td>返回的数据</td>
+    </tr>
+    <tr>
+        <td>-id</td>
+        <td>number</td>
+        <td>非必须</td>
+        <td>id</td>
+    </tr>
+    <tr>
+        <td>-url</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>详细界面</td>
+    </tr>
+    <tr>
+        <td>-thumbnail</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>展示图片</td>
+    </tr>
+    <tr>
+        <td>-title</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>名字</td>
+    </tr>
+    <tr>
+        <td>-description</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>介绍</td>
+    </tr>
+</table>
+<p>响应数据样例：</p>
+<pre>
+    {
+      "code": 1,
+      "data": [
+        {
+            "id": "1",
+            "url": "http://jingpeizhao.cn/java/publicize/1.html",
+            "thumbnail": "http://jingpeizhao.cn/java/photo/1.png",
+            "title": "名字",
+            "description": "介绍"
+        },
+        {
+            "id": "2",
+            "url": "http://jingpeizhao.cn/java/publicize/2.html",
+            "thumbnail": "http://jingpeizhao.cn/java/photo/2.png",
+            "title": "名字",
+            "description": "介绍"
+        }
+      ]
+    }
+    </pre>
+<h2>生产数据</h2>
+
+<h3>1.1 生产数据</h3>
+
+<h4>1.1.1 基本信息</h4>
+<p>请求路径：/produce</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于接受生产数据</p>
+
+<h4>1.1.2 请求参数</h4>
+<p>无</p>
+
+<h4>1.1.3 响应数据</h4>
+<p>参数格式：application/json</p>
+<p>参数说明：</p>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>code</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>响应码，1 代表成功，0 代表失败</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>object[]</td>
+        <td>非必须</td>
+        <td>返回的数据</td>
+    </tr>
+    <tr>
+        <td>- start1</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节一开始时间</td>
+    </tr>
+    <tr>
+        <td>- start2</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节二开始时间</td>
+    </tr>
+    <tr>
+        <td>- start3</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节三开始时间</td>
+    </tr>
+    <tr>
+        <td>- end1</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节一结束时间</td>
+    </tr>
+    <tr>
+        <td>- end2</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节二结束时间</td>
+    </tr>
+    <tr>
+        <td>- end3</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节三结束时间</td>
+    </tr>
+    <tr>
+        <td>- abnormal</td>
+        <td>number</td>
+        <td>非必须</td>
+        <td>是否有问题，1 代表无，0 代表有</td>
+    </tr>
+</table>
+<p>响应数据样例：</p>
+<pre>
+    {
+      "code": 1,
+      "data": [
+        {
+          "id": 1,
+          "start1": "2022-09-01T23:06:29",
+          "end1": "2022-09-01T23:06:30",
+          "start2": "2022-09-01T23:06:31",
+          "end2": "2022-09-01T23:06:32",
+          "start3": "2022-09-01T23:06:33",
+          "end3": "2022-09-01T23:06:34",
+          "abnormal": 0
+        }
+      ]
+    }
+    </pre>
+
+<h3>1.1 报错数据</h3>
+
+<h4>1.1.1 基本信息</h4>
+<p>请求路径：/report</p>
+<p>请求方式：GET</p>
+<p>接口描述：该接口用于接受生产数据</p>
+
+<h4>1.1.2 请求参数</h4>
+<p>无</p>
+
+<h4>1.1.3 响应数据</h4>
+<p>参数格式：application/json</p>
+<p>参数说明：</p>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>备注</th>
+    </tr>
+    <tr>
+        <td>code</td>
+        <td>number</td>
+        <td>必须</td>
+        <td>响应码，1 代表成功，0 代表失败</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>object[]</td>
+        <td>非必须</td>
+        <td>返回的数据</td>
+    </tr>
+    <tr>
+        <td>- report1</td>
+        <td>number</td>
+        <td>非必须</td>
+        <td>生产环节一是否报错,1是有,0是无</td>
+    </tr>
+    <tr>
+        <td>- report2</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节二是否报错,1是有,0是无</td>
+    </tr>
+    <tr>
+        <td>- report3</td>
+        <td>string</td>
+        <td>非必须</td>
+        <td>生产环节三是否报错,1是有,0是无</td>
+    </tr>
+</table>
+<p>响应数据样例：</p>
+<pre>
+    {
+      "code": 1,
+      "data": [
+        {
+            "id": 1,
+            "report1": "0",
+            "report2": "0",
+            "report3": "1"
+        }
+      ]
+    }
+    </pre>
+</body>
+</html>
